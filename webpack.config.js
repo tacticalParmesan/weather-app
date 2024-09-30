@@ -4,7 +4,7 @@ const { assert } = require("console");
 
 module.exports = {
   mode: "development",
-  entry: "./src/main.js",
+  entry: "./src/index.js",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",

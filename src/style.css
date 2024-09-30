@@ -1,0 +1,59 @@
+/*#region CSS Reset */
+:root {
+  font-family: "Roboto Mono", Arial, sans-serif;
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: inherit;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+/*#endregion*/
+
+#app {
+    height: 100vh;
+    width: 768px;
+    margin: 0 auto;
+}
+
+.search-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.panel {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.current-location-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.current-location-panel .current-location-icon {
+  width: 8rem;
+  height: 8rem;
+  align-self: center;
+  justify-self: center;
+}
+
+img:not(.current-location-icon) {
+    width: 3rem;
+    height: 3rem;
+}
