@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Odin Project</title>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+    <div id="app">
+        <form action="#" class="search-panel">
+            <input type="search" placeholder="Search location...">
+            <button class="search-button">LENS</button>
+        </form>
+        <div class="grid">
+            <div class="panel current-location-panel">
+                <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" 
+                alt="Weather condition icon"
+                class="current-location-icon">
+                <div class="place-time-panel">
+                    <p class="location-name">Location name</p>
+                    <time datetime="" class="current-time">Current Time</time>
+                </div>
+                <div class="current-condition-panel">
+                    <p>Current weather:</p>
+                    <div class="current-condition-text">Condition</div>
+                </div>
+                <div class="current-info-sunpanel">
+                    <p class="temperature">TEMP</p>
+                    <p class="feels-like">FEELS LIKE</p>
+                    <p class="today-max">MAX</p>
+                    <p class="today-min">MIN</p>
+                </div>
+            </div>
+            <div class="panel hourly-forecast-panel">
+                <ul class="hourly-forecast">
+                    <li class="hour-forecast hour">
+                        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather hour icon">
+                        <p class="hour-hour">HOUR:MINS</p>
+                        <p class="hour-condition"">Condition</p>
+                        <p class="hour-temperature">TEMP</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel weekly-forecast-panel">
+                <ul class="weekly-forecast">
+                    <li class="weekday-forecast day">
+                        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather weekday icon">
+                        <p class="weekday-day">DAY</p>
+                        <p class="weekday-condition">Condition</p>
+                        <p class="weedkday-min-max-temp">MAX - MIN</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel extra-details-panel">
+                <div class="details-tab humidity-tab">
+                    <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Humidity Icon">
+                    <p class="humidity">HUM</p>
+                </div>
+                <div class="details-tab wind-tab">
+                    <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Wind Icon">
+                    <p class="wind">WIND</p>
+                </div>
+                <div class="details-tab sunrise-tab">
+                    <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Sunrise Icon">
+                    <p class="sunrise">HOUR:MIN</p>
+                </div>
+                <div class="details-tab sunset-tab">
+                    <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Sunset Icon">
+                    <p class="sunset">HOUR:MIN</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
