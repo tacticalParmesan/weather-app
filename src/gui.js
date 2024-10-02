@@ -1,5 +1,5 @@
 import { capitalize } from "lodash";
-import { format } from "date-fns";
+import { format, setHours, startOfHour } from "date-fns";
 
 export const Gui = (function () {
   function updateLocation(location) {
@@ -37,11 +37,34 @@ export const Gui = (function () {
     img.src = url;
 }
 
+function getNextHours(hours) {
+  const nextHours = hours.filter((hour) => {
+    const now = startOfHour(new Date())
+    const comparedHour = setHours(new Date(), hours.indexOf(hour))
+    return comparedHour > now
+  });
+  
+  return nextHours
+}
+
+function updateHourlyForecast(hours) {
+  const hourlyForecast = document.querySelector('.hourly-forecast')
+  getNextHours(hours).forEach((hour) => {
+    const template = document.querySelector(".hourly-forecast-template")
+    const newHourlyForecast = template.content.cloneNode(true)
+
+    newHourlyForecast.querySelector('.hour-hour').textContent = hour.datetime.slice(0, 5)
+    hourlyForecast.appendChild(newHourlyForecast)
+
+  })
+}
+
   return {
     updateLocation,
     updateDateTime,
     updateWeatherCondition,
     updateCurrentInfoPanel,
-    updateIcon
+    updateIcon,
+    updateHourlyForecast
   };
 })();

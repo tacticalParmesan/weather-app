@@ -1,6 +1,7 @@
 import "./style.css";
 import { weatherAPI } from "./api";
 import { Gui } from "./gui";
+import { setHours, startOfHour } from "date-fns";
 
 function loadListeners() {
   const search = document.querySelector(".searchbar");
@@ -12,16 +13,19 @@ function loadListeners() {
 async function getWeather(location) {
   const weatherData = await weatherAPI.fetchWeatherData(location);
 
-  Gui.updateLocation(weatherData.address)
-  Gui.updateDateTime()
-  Gui.updateWeatherCondition(weatherData.currentConditions.conditions)
+  Gui.updateLocation(weatherData.address);
+  Gui.updateDateTime();
+  Gui.updateWeatherCondition(weatherData.currentConditions.conditions);
   Gui.updateCurrentInfoPanel({
     temperature: weatherData.currentConditions.temp,
     feelsLike: weatherData.currentConditions.feelslike,
     todayMax: weatherData.days[0].tempmax,
-    todayMin: weatherData.days[0].tempmin
-  })
-  Gui.updateIcon(weatherData.currentConditions.icon)
+    todayMin: weatherData.days[0].tempmin,
+  });
+  Gui.updateIcon(weatherData.currentConditions.icon);
+  Gui.updateHourlyForecast(weatherData.days[0].hours)
+  
 }
 
 loadListeners();
+

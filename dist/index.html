@@ -33,12 +33,14 @@
             </div>
             <div class="panel hourly-forecast-panel">
                 <ul class="hourly-forecast">
-                    <li class="hour-forecast hour">
-                        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather hour icon">
-                        <p class="hour-hour">HOUR:MINS</p>
-                        <p class="hour-condition"">Condition</p>
-                        <p class="hour-temperature">TEMP</p>
-                    </li>
+                    <template class="hourly-forecast-template">
+                        <li class="hour-forecast hour">
+                            <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather hour icon">
+                            <p class="hour-hour">HOUR:MINS</p>
+                            <p class="hour-condition"">Condition</p>
+                            <p class="hour-temperature">TEMP</p>
+                        </li>
+                    </template>
                 </ul>
             </div>
             <div class="panel weekly-forecast-panel">
