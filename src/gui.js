@@ -1,14 +1,15 @@
 import { capitalize } from "lodash";
 import { format, setHours, startOfHour } from "date-fns";
+import rain from '../assets/rain.svg'
 
 export const Gui = (function () {
   const icons = {
     'snow': '',
-    'rain': 'https://img.icons8.com/ios-filled/50/rain--v1.png',
+    'rain': '../assets/rain.svg',
     'fog': '',
     'wind': '',
     'cloudy': '',
-    'partly-cloudy-day': '',
+    'partly-cloudy-day': '', 
     'partly-cloudy-night': '',
     'clear-day': '',
     'clear-night': '',
