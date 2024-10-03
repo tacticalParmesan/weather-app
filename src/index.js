@@ -24,8 +24,10 @@ async function getWeather(location) {
   });
   Gui.updateIcon(weatherData.currentConditions.icon);
   Gui.updateHourlyForecast(weatherData.days[0].hours)
+  Gui.updateWeeklyForecast(weatherData.days)
   
 }
 
 loadListeners();
+getWeather('london')
 

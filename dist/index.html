@@ -33,24 +33,11 @@
             </div>
             <div class="panel hourly-forecast-panel">
                 <ul class="hourly-forecast">
-                    <template class="hourly-forecast-template">
-                        <li class="hour-forecast hour">
-                            <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather hour icon">
-                            <p class="hour-hour">HOUR:MINS</p>
-                            <p class="hour-condition"">Condition</p>
-                            <p class="hour-temperature">TEMP</p>
-                        </li>
-                    </template>
                 </ul>
             </div>
             <div class="panel weekly-forecast-panel">
                 <ul class="weekly-forecast">
-                    <li class="weekday-forecast day">
-                        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather weekday icon">
-                        <p class="weekday-day">DAY</p>
-                        <p class="weekday-condition">Condition</p>
-                        <p class="weedkday-min-max-temp">MAX - MIN</p>
-                    </li>
+
                 </ul>
             </div>
             <div class="panel extra-details-panel">
@@ -73,5 +60,23 @@
             </div>
         </div>
     </div>
+
+    <!-- templates -->
+    <template class="hourly-forecast-template">
+        <li class="hour-forecast hour">
+            <img class="hour-icon" src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" alt="Small weather hour icon">
+            <p class="hour-hour">HOUR:MINS</p>
+            <p class="hour-condition"">Condition</p>
+            <p class="hour-temperature">TEMP</p>
+        </li>
+    </template>
+    <template class="weekly-forecast-template">
+        <li class="weekday-forecast day">
+            <img class="weekday-icon" src="" alt="Small weather weekday icon">
+            <p class="weekday-day">DAY</p>
+            <p class="weekday-condition">Condition</p>
+            <p class="weekday-min-max-temp">MAX - MIN</p>
+        </li>
+    </template>
 </body>
 </html>
