@@ -2,6 +2,18 @@ import { capitalize } from "lodash";
 import { format, setHours, startOfHour } from "date-fns";
 
 export const Gui = (function () {
+  const icons = {
+    'snow': '',
+    'rain': 'https://img.icons8.com/ios-filled/50/rain--v1.png',
+    'fog': '',
+    'wind': '',
+    'cloudy': '',
+    'partly-cloudy-day': '',
+    'partly-cloudy-night': '',
+    'clear-day': '',
+    'clear-night': '',
+  }
+
   function clearElement(element) {
     while (element.firstChild) {
       element.removeChild(element.firstChild);
@@ -39,7 +51,7 @@ export const Gui = (function () {
 
   function updateIcon(conditionCode) {
     const img = document.querySelector(".current-location-icon");
-    const url = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/${conditionCode}.svg`;
+    const url = icons[conditionCode]
     img.src = url;
   }
 
@@ -70,7 +82,7 @@ export const Gui = (function () {
         (hour.temp.toFixed(0)) + unit;
       newHourlyForecast.querySelector(
         ".hour-icon"
-      ).src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/${hour.icon}.svg`;
+      ).src = icons[hour.icon]
 
       hourlyForecast.appendChild(newHourlyForecast);
     });
