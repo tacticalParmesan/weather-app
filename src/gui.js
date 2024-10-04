@@ -1,18 +1,17 @@
 import { capitalize } from "lodash";
 import { format, setHours, startOfHour } from "date-fns";
-import rain from '../assets/rain.svg'
 
 export const Gui = (function () {
   const icons = {
-    'snow': '',
-    'rain': '../assets/rain.svg',
-    'fog': '',
-    'wind': '',
-    'cloudy': '',
-    'partly-cloudy-day': '', 
-    'partly-cloudy-night': '',
-    'clear-day': '',
-    'clear-night': '',
+    'snow': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-snow.svg',
+    'rain': `https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-rain.svg`,
+    'fog': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-fog.svg',
+    'wind': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-strong-wind.svg',
+    'cloudy': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-cloudy.svg',
+    'partly-cloudy-day': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-day-cloudy.svg', 
+    'partly-cloudy-night': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-night-alt-cloudy.svg',
+    'clear-day': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-day-sunny.svg',
+    'clear-night': 'https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-night-clear.svg',
   }
 
   function clearElement(element) {
@@ -52,8 +51,7 @@ export const Gui = (function () {
 
   function updateIcon(conditionCode) {
     const img = document.querySelector(".current-location-icon");
-    const url = icons[conditionCode]
-    img.src = url;
+    img.src = icons[conditionCode];
   }
 
   function getNextHours(hours) {
@@ -81,10 +79,10 @@ export const Gui = (function () {
         hour.conditions;
       newHourlyForecast.querySelector(".hour-temperature").textContent =
         (hour.temp.toFixed(0)) + unit;
-      newHourlyForecast.querySelector(
-        ".hour-icon"
-      ).src = icons[hour.icon]
-
+        newHourlyForecast.querySelector(
+          ".hour-icon"
+        ).src = icons[hour.icon] 
+  
       hourlyForecast.appendChild(newHourlyForecast);
     });
   }
@@ -109,7 +107,8 @@ export const Gui = (function () {
       ).textContent = `${(day.tempmin).toFixed(0)} - ${(day.tempmax).toFixed(0)}${unit}`;
       newWeeklyForecast.querySelector(
         ".weekday-icon"
-      ).src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/${day.icon}.svg`;
+      ).src = icons[day.icon]
+      // `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/${day.icon}.svg`;
 
       weeklyForecast.appendChild(newWeeklyForecast);
     });
