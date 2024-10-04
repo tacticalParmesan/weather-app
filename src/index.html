@@ -13,22 +13,37 @@
         </form>
         <div class="grid">
             <div class="panel current-location-panel">
-                <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg" 
-                alt="Weather condition icon"
-                class="current-location-icon">
-                <div class="place-time-panel">
-                    <p class="location-name">Location name</p>
-                    <time datetime="" class="current-time">Current Time</time>
+                <div class="upper-current-condition-panel">
+                    <div class="current-condition-panel">
+                        <img src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/partly-cloudy-day.svg"
+                        alt="Weather condition icon"
+                        class="current-location-icon">
+                        <div class="current-condition-text">Condition</div>
+                    </div>
+                    <div class="place-time-panel">
+                        <p class="location-name">Location name</p>
+                        <time datetime="" class="current-time">Current Time</time>
+                    </div>
                 </div>
-                <div class="current-condition-panel">
-                    <p>Current weather:</p>
-                    <div class="current-condition-text">Condition</div>
-                </div>
-                <div class="current-info-sunpanel">
-                    <p class="temperature">TEMP</p>
-                    <p class="feels-like">FEELS LIKE</p>
-                    <p class="today-max">MAX</p>
-                    <p class="today-min">MIN</p>
+                <div class="current-condition-desc">Description</div>
+                    <span class="feels-like"></span>
+                <div class="current-info-subpanel">
+                    <div class="sub-info">
+                        <img src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-thermometer.svg" alt="" class="sub-info-img">
+                        <p class="temperature">TEMP</p>
+                    </div>
+                    <div class="sub-info">
+                        <img src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-thermometer.svg" alt="" class="sub-info-img">
+                        <p class="today-max">MAX</p>
+                    </div>
+                    <div class="sub-info">
+                        <img src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-thermometer.svg" alt="" class="sub-info-img">
+                        <p class="today-min">MIN</p>
+                    </div>
+                    <div class="sub-info">
+                        <img src="https://raw.githubusercontent.com/erikflowers/weather-icons/bb80982bf1f43f2d57f9dd753e7413bf88beb9ed/svg/wi-umbrella.svg" alt="" class="sub-info-img">
+                        <p class="precipitations">MIN</p>
+                    </div>
                 </div>
             </div>
             <div class="panel hourly-forecast-panel">

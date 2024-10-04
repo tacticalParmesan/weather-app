@@ -31,9 +31,11 @@ export const Gui = (function () {
     time.textContent = format(new Date(), "d MMM yyyy");
   }
 
-  function updateWeatherCondition(condition) {
+  function updateWeatherCondition(condition, conditionText) {
     const currentCondition = document.querySelector(".current-condition-text");
+    const conditionDesc = document.querySelector(".current-condition-desc")
     currentCondition.textContent = condition;
+    conditionDesc.textContent = conditionText 
   }
 
   function updateCurrentInfoPanel(data, system = "metric") {
@@ -41,12 +43,14 @@ export const Gui = (function () {
     const feelsLike = document.querySelector(".feels-like");
     const todayMax = document.querySelector(".today-max");
     const todayMin = document.querySelector(".today-min");
+    const precipitations = document.querySelector(".precipitations")
     const unit = system === "metric" ? " °C" : " °F";
 
-    temperature.textContent = "Temperature: " + data.temperature + unit;
-    feelsLike.textContent = "Feels like: " + data.feelsLike + unit;
-    todayMax.textContent = "Today max: " + data.todayMax + unit;
-    todayMin.textContent = "Today min: " + data.todayMin + unit;
+    temperature.textContent = data.temperature + unit;
+    feelsLike.textContent = "Feels like " + data.feelsLike + unit + ".";
+    todayMax.textContent = data.todayMax + unit;
+    todayMin.textContent = data.todayMin + unit;
+    precipitations.textContent = data.precipprob + " %"
   }
 
   function updateIcon(conditionCode) {

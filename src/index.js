@@ -15,12 +15,13 @@ async function getWeather(location) {
 
   Gui.updateLocation(weatherData.address);
   Gui.updateDateTime();
-  Gui.updateWeatherCondition(weatherData.currentConditions.conditions);
+  Gui.updateWeatherCondition(weatherData.currentConditions.conditions, weatherData.description);
   Gui.updateCurrentInfoPanel({
     temperature: weatherData.currentConditions.temp,
     feelsLike: weatherData.currentConditions.feelslike,
     todayMax: weatherData.days[0].tempmax,
     todayMin: weatherData.days[0].tempmin,
+    precipprob: weatherData.currentConditions.precipprob
   });
   Gui.updateIcon(weatherData.currentConditions.icon);
   Gui.updateHourlyForecast(weatherData.days[0].hours)
