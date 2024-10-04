@@ -25,6 +25,11 @@ async function getWeather(location) {
   Gui.updateIcon(weatherData.currentConditions.icon);
   Gui.updateHourlyForecast(weatherData.days[0].hours)
   Gui.updateWeeklyForecast(weatherData.days)
+  Gui.updateHumidity(weatherData.currentConditions.humidity)
+  Gui.updateWind(weatherData.currentConditions.windspeed)
+  Gui.updateSunrise(weatherData.currentConditions.sunrise)
+  Gui.updateSunset(weatherData.currentConditions.sunset)
+
   
 }
 

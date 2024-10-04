@@ -108,10 +108,29 @@ export const Gui = (function () {
       newWeeklyForecast.querySelector(
         ".weekday-icon"
       ).src = icons[day.icon]
-      // `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/58c79610addf3d4d91471abbb95b05e96fb43019/SVG/1st%20Set%20-%20Monochrome/${day.icon}.svg`;
 
       weeklyForecast.appendChild(newWeeklyForecast);
     });
+  }
+
+  function updateHumidity(humidityValue) {
+    const humidityText = document.querySelector('.humidity')
+    humidityText.textContent = humidityValue.toFixed(1) + ' %'
+  }
+
+  function updateWind(windValue) {
+    const windText = document.querySelector('.wind')
+    windText.textContent = windValue + ' km/h'
+  }
+
+  function updateSunrise(sunriseValue) {
+    const sunriseText = document.querySelector('.sunrise')
+    sunriseText.textContent = sunriseValue
+  }
+
+  function updateSunset(sunsetValue) {
+    const sunsetText = document.querySelector('.sunset')
+    sunsetText.textContent = sunsetValue
   }
 
   return {
@@ -121,6 +140,10 @@ export const Gui = (function () {
     updateCurrentInfoPanel,
     updateIcon,
     updateHourlyForecast,
-    updateWeeklyForecast
+    updateWeeklyForecast,
+    updateHumidity,
+    updateWind,
+    updateSunrise,
+    updateSunset
   };
 })();
